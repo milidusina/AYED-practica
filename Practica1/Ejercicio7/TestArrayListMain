@@ -1,0 +1,134 @@
+package practica1ejercicio7;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
+public class TestArrayList {
+
+	public static void main(String[] args) {
+		//INCISO A
+		Scanner s = new Scanner(System.in);
+		List <Integer> listaNums = new ArrayList<Integer>();
+		
+		System.out.println("Ingrese un numero:   (-1 para finalizar)");
+		int n = s.nextInt();
+		while(n != -1) {
+			listaNums.add(n);
+			n = s.nextInt();
+		}
+		System.out.println("Listado de numeros guardado en ArrayList");
+		for (int num: listaNums) {
+			System.out.print(num + " - ");
+		}
+		
+	//INCISO B
+		/*la implementacion de una linkedlist consumiria mas memoria
+			en cuanto al acceso a los numeros, en el ArrayList es directo mientras
+			que en la lista enlazada el acceso es de forma secuncial, en este caso no hay 
+			diferencia porque la lista se recorre en orden-
+        	ArrayList necesita un espacio continuo de memoria para guardar datos
+        	mientras que LinkedList enlaza nodos con punteros y no requiere espacio 
+			continuo de memoria*/
+		
+		
+	//INCISO C	
+		
+		System.out.println("  ");
+		for (int i=0; i< listaNums.size(); i++) {
+			System.out.print(listaNums.get(i) + " - ");
+		}
+		
+		System.out.println("  ");
+		listaNums.forEach(num -> System.out.print(num + " - "));
+		
+		
+		System.out.println("  ");
+		Iterator<Integer> it = listaNums.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next() + " - ");
+		}
+		s.close();
+		
+	//INCISO D
+		List<Estudiante> pers = new ArrayList<Estudiante>();
+		Estudiante e1 = new Estudiante("Milagros","Dusina","mili3653@gmail.com",3,"Berazategui");
+		Estudiante e2 = new Estudiante("Juani","Gomez","juanchi@gmail.com",3,"La Plata");
+		Estudiante e3 = new Estudiante("Selena","Perez","selenita@gmail.com",3,"Quilmes");
+		pers.add(e1);
+		pers.add(e2);
+		pers.add(e3);
+
+		List<Estudiante> persCopia = new ArrayList<Estudiante>();
+		persCopia.addAll(pers);
+		
+		System.out.println("Lista de estudiantes original: ");
+		for (Estudiante est: pers) {
+			System.out.println(est.toString());
+		}
+		
+		System.out.println("--------------------------");
+		
+		System.out.println("Lista de estudiantes, copia:  ");
+		for (Estudiante est: persCopia) {
+			System.out.println(est.toString());
+		}
+	
+		
+		pers.set(0, new Estudiante("prueba","prueba","noexiste@gmail.com",0,"nunca"));
+		
+		
+		System.out.println("Lista de estudiantes original: ");
+		for (Estudiante est: pers) {
+			System.out.println(est.toString());
+		}
+		
+		System.out.println("--------------------------");
+		
+		System.out.println("Lista de estudiantes, copia:  ");
+		for (Estudiante est: persCopia) {
+			System.out.println(est.toString());
+		}	
+	/*solo se modifica en la lista donde hicimos el cambio. Es decir al hacer addAll se
+	 * copiaron las referencias de los objetos, no se crearon otros objetos en la heap
+	 * con referencias distintas. cuando cambiamos el elemento de la pos 0, se borra la 
+	 * referencia anterior y se agrega otro objeto distinto. las listas en pos 0 ya no 
+	 * apuntan al mismo objeto. 
+	 * 
+	 * si hubieramos hecho 
+	 * e1.setNombre("elsa"); ahi cambia en ambas listas
+	 */
+		
+		
+	//ArrayList<Estudiante> lista_copia = new ArrayList<Estudiante>(pers);
+	/*la diferencia es q se crea mediante su constructor
+	 * ambas solo copian referencias, no crean nuevos objetos. 
+	 * addall se usa mas cuando ya tenemos una lista con elementos y queremos agregarle mas
+	 * usar el constructor es mas eficiente, ya q se sabe de antemano cuando espacio reservar
+	 * en cambio con addall se reserva espacion con una lista vacia, y al ser ArayList
+	 * tiene que ir haciendo copias del arreglo a medida q ingresamos datos.
+	 */
+	
+		
+	//INCISO E
+		Estudiante e5 = new Estudiante("Selena","Perez","selenita@gmail.com",3,"Quilmes");
+		if (!pers.contains(e5)) {
+			pers.add(e5);
+			System.out.println("El alumno se agrego correctamente");
+		}
+		else {
+			System.out.println("El alumno no se agrego, ya se encuentra en los datos guardados");
+		}
+		
+		
+	//INCISO F
+		Boolean res = Capicua.EsCapicua(listaNums);
+		if (res) {
+			System.out.println("El numero si es capicua");
+		}
+		else System.out.println("El numero no es capicua");
+	
+	}
+
+}
