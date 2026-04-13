@@ -1,0 +1,14 @@
+package practica1ejercicio7;
+
+import java.util.List;
+public class main7G {
+
+	public static void main(String[] args) {
+
+			int num = 6;
+			List<Integer> lista = Sucesion.calcularSucesion(num);
+			
+			System.out.println("Sucesión de Collatz para " + num + ":");
+	        System.out.println(lista);
+		}
+	}
