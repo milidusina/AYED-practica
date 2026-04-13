@@ -1,0 +1,22 @@
+package practica1ejercicio7;
+
+import java.util.*;
+
+public class Sucesion {
+	
+	public static List<Integer> calcularSucesion (int num) {
+		List<Integer> l = new ArrayList<Integer>();
+		calcularSucesionRecursivo(l,num);
+		return l;
+	}
+	
+	public static void calcularSucesionRecursivo(List<Integer> l,int n) {
+		l.add(n);
+		if (n>1) {
+			if(n%2==0){
+				calcularSucesionRecursivo(l,n/2);
+			}
+			else calcularSucesionRecursivo(l,(n*3)+1);
+		}
+	}
+}
