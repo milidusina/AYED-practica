@@ -1,0 +1,46 @@
+package practica1;
+
+public class Data {
+	private int Maximo;
+	private int Minimo;
+	private double Promedio;
+	public int getMaximo() {
+		return Maximo;
+	}
+	public void setMaximo(int maximo) {
+		Maximo = maximo;
+	}
+	public int getMinimo() {
+		return Minimo;
+	}
+	public void setMinimo(int minimo) {
+		Minimo = minimo;
+	}
+	public double getPromedio() {
+		return Promedio;
+	}
+	public void setPromedio(double promedio) {
+		Promedio = promedio;
+	}
+	public Data(int max, int min, double prom) {
+		setMaximo(max);
+		setMinimo(min);
+		setPromedio(prom);
+	}
+	
+	public Data() {
+		setMaximo(0);
+		setMinimo(0);
+		setPromedio(0);
+	}
+	
+	@Override
+	public String toString() {
+		return "Data [Maximo=" + Maximo + 
+						", Minimo=" + Minimo + 
+						", Promedio=" + Promedio + "]";
+		
+		
+	}
+	
+}
