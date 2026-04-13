@@ -1,0 +1,32 @@
+package practica1;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Estudiante [] arreglo1 = new Estudiante[2];
+		Profesor [] arreglo2 = new Profesor[3];
+				
+		Estudiante estud1 = new Estudiante("juani", "rodriguez", "juaniro@gmail", 3, "berazategui");
+		Estudiante estud2 = new Estudiante("pepe", "rodriguez", "pepe@gmail", 3, "quilmes");
+
+		Profesor profe1 = new Profesor("fede", "suarez", "fede@gmail", "unlp informatica", 3);
+		Profesor profe2 = new Profesor("jose", "gonzales", "josee@gmail", "unlp informatica", 1);
+		Profesor profe3 = new Profesor("jorge", "runco", "runco@gmail", "unlp informatica", 2);
+				
+		arreglo1[0]= estud1;
+		arreglo1[1]= estud2;
+		arreglo2[0]= profe1;
+		arreglo2[1]= profe2;
+		arreglo2[2]= profe3;
+		
+		
+		
+		for (int i=0; i<2; i++) {
+			System.out.println(arreglo1[i].tusDatos());
+		}
+		for (int i=0; i<3; i++) {
+			System.out.println(arreglo2[i].tusDatos());
+		}
+	}
+
+}
