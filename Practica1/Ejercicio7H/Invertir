@@ -1,0 +1,21 @@
+package practica1ejercicio7;
+import java.util.*;
+public class Invertir {
+	private static int posicionEscritura;
+	
+	
+	public static void invertirOrdenA (List<Integer> l){
+		if (l == null || l.size() <= 1) return;
+		int i=0;
+		invertirOrdenArrayList(l,i);
+	}
+	
+	public static void invertirOrdenArrayList (List<Integer> l, int i){
+		Integer valor = l.get(i);
+	    if (i < l.size() - 1) {
+		    invertirOrdenArrayList(l, i + 1);
+		    }		    
+		l.set(posicionEscritura, valor);
+		posicionEscritura++;		
+		}
+	}
