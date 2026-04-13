@@ -1,0 +1,21 @@
+package practica1ejercicio7;
+
+import java.util.*;
+public class Capicua {
+
+	public static boolean EsCapicua (List<Integer> lista) {
+		boolean retorno = true;
+		if (!lista.isEmpty()) {
+			int pri = 0;
+			int ult = lista.size() -1;
+			while (pri < ult) {
+				if (lista.get(pri).equals(lista.get(ult))) {
+					pri++;
+					ult--;
+				}
+				else retorno = false;
+			}
+		}
+	return retorno;
+	}
+}
