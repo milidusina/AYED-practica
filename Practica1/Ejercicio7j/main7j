@@ -13,9 +13,9 @@ public class main7j {
 		lista1.add(20);
 		lista1.add(30);
 		lista1.add(35);
-		lista1.add(3);
-		lista1.add(28);
-		lista1.add(52);
+		lista2.add(3);
+		lista2.add(28);
+		lista2.add(52);
 		
 		System.out.println(lista1);
 		System.out.println(lista2); 
