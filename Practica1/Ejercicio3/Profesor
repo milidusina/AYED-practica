@@ -1,0 +1,36 @@
+package practica1;
+
+public class Profesor extends Persona{
+	
+	private String facultad;
+	private int catedra;
+	
+	public String getFacultad() {
+		return facultad;
+	}
+	public void setFacultad(String facultad) {
+		this.facultad = facultad;
+	}
+	public int getCatedra() {
+		return catedra;
+	}
+	public void setCatedra(int catedra) {
+		this.catedra = catedra;
+	}
+	
+	public Profesor (String nom, String ape, String email, String facu, int cat) {
+		super(nom,ape,email);
+		setFacultad(facu);
+		setCatedra(cat);
+	}
+	
+	
+	public String tusDatos() {
+		String aux= "  Profesor=   " + super.tusDatos()  + 
+					"     facultad:   " + getFacultad()  +
+					"     catedra:  " + getCatedra();
+		return aux;
+	}
+	
+	
+}
