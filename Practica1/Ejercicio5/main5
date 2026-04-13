@@ -1,0 +1,58 @@
+package practica1;
+
+public class Clase5 {
+	private static Data d;
+	
+	
+	public static Data calcularValoresA (int[] arreglo) {
+		int min= Integer.MAX_VALUE;
+		int max= Integer.MIN_VALUE;
+		double suma=0;
+		for(int i=0; i<arreglo.length; i++) {
+			if (arreglo[i] < min) min = arreglo[i];
+			if (arreglo[i] > max) max = arreglo[i];
+			suma += arreglo[i];
+		}
+		double prom = (double)suma / arreglo.length;
+		Data valoresSalida = new Data(max,min,prom);
+		return valoresSalida;
+		
+	}
+	
+	public static void calcularValoresB (int[] arreglo, Data d) {
+		int min= Integer.MAX_VALUE;
+		int max= Integer.MIN_VALUE;
+		double suma=0;
+		for(int i=0; i<arreglo.length; i++) {
+			if (arreglo[i] < min) min = arreglo[i];
+			if (arreglo[i] > max) max = arreglo[i];
+			suma += arreglo[i];
+		}
+		double prom = (double)suma / arreglo.length;
+		d.setMaximo(max);
+		d.setMinimo(min);
+		d.setPromedio(prom);
+	}
+	
+	public static void calcularValoresC (int[] arreglo) {
+		int min= Integer.MAX_VALUE;
+		int max= Integer.MIN_VALUE;
+		double suma=0;
+		for(int i=0; i<arreglo.length; i++) {
+			if (arreglo[i] < min) min = arreglo[i];
+			if (arreglo[i] > max) max = arreglo[i];
+			suma += arreglo[i];
+		}
+		double prom = (double)suma / arreglo.length;
+		d = new Data();
+		d.setMaximo(max);
+		d.setMinimo(min);
+		d.setPromedio(prom);
+	}
+	
+	public static Data obtenerResultado () {
+		return d;
+	}
+	
+	
+}
