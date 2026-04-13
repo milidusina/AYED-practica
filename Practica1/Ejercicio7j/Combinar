@@ -1,0 +1,36 @@
+package practica1ejercicio7;
+import java.util.*;
+
+public class Combinar {
+
+	public static ArrayList<Integer> combinarOrdenado(ArrayList<Integer> lista1,	
+												ArrayList<Integer> lista2){
+		ArrayList<Integer> resultado = new ArrayList<Integer>();
+
+		int indice1 = 0;
+		int indice2 = 0;
+		while ((indice1 < lista1.size()) && (indice2< lista2.size())) {
+			int actual1 = lista1.get(indice1);	
+			int actual2 = lista2.get(indice2);
+			if (actual1 < actual2) {
+				resultado.add(actual1);
+				indice1++;
+			}
+			else {
+				resultado.add(actual2);
+				indice2++;
+			}
+		}
+		while (indice1 < lista1.size()) {
+			int actual1 = lista1.get(indice1);	
+			resultado.add(actual1);
+			indice1++;
+		}
+		while (indice2 < lista2.size()) {
+			int actual2 = lista2.get(indice2);	
+			resultado.add(actual2);
+			indice2++;
+		}
+	return resultado;
+	}
+}
